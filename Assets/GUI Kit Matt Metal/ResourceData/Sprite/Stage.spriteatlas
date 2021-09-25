@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Stage
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6144a5425a5944d4f8b959c59fa4ced1, type: 3}
+    totalSpriteSurfaceArea: 262602
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: aa62a7228ddba4de6848d11a492e50d8, type: 3}
+  - {fileID: 21300000, guid: 27231572b06b04954b974dd2084af778, type: 3}
+  - {fileID: 21300000, guid: b23fcab26cea04f1593b1c88a0cecafe, type: 3}
+  - {fileID: 21300000, guid: f45e6024e11034fcc9512a0567b767f0, type: 3}
+  - {fileID: 21300000, guid: 76d991e5bad0f4041a216ed123567a73, type: 3}
+  - {fileID: 21300000, guid: bbc79406b5e3f42429dde667ba8e24f4, type: 3}
+  - {fileID: 21300000, guid: b6b65156112ad419fab25ee42487a6c2, type: 3}
+  - {fileID: 21300000, guid: 4fbabc87487ad4600bb4fbd8285f0b3a, type: 3}
+  - {fileID: 21300000, guid: 2c69622a560a74a8bba6b9e7ae77a2c7, type: 3}
+  - {fileID: 21300000, guid: 727d550f23146456c84ff43c289d86f4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - stage_frame_default
+  - page_next_f
+  - stage_star_3
+  - page_prev_f
+  - stage_star_2
+  - stage_frame_select
+  - stage_star_1
+  - page_next_n
+  - stage_frame_lock
+  - page_prev_n
+  m_Tag: Stage
+  m_IsVariant: 0

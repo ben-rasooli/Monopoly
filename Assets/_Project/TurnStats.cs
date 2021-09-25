@@ -1,9 +1,18 @@
+using System;
+
 namespace Project
 {
-  public class TurnStats
+  [Serializable]
+  public struct TurnStats
   {
     public int Index;
     public string PlayerName;
+    public int PlayerLocationID;
     public Dice Dice;
+
+    public override string ToString()
+    {
+      return $"Turn:[{Index}] - {Dice} - [{PlayerName}] Location:[{PlayerLocationID}]";
+    }
   }
 }

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shop
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: cc8e24aa46fc5437d975104fbf005dc6, type: 3}
+    totalSpriteSurfaceArea: 2743018
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5d4fb440ada984738bb6800a367d1488, type: 3}
+  - {fileID: 21300000, guid: ca124c51c9cd540fd80367e02a212105, type: 3}
+  - {fileID: 21300000, guid: 95be0261cb041459cbac10d1bacb49e2, type: 3}
+  - {fileID: 21300000, guid: 2611d3b1db35641b691a9648f27818b7, type: 3}
+  - {fileID: 21300000, guid: 88c1763271f4e4e50aaeba1acc151cfb, type: 3}
+  - {fileID: 21300000, guid: 8e436ae2ddd1e4842bdd4b1c6729e2a6, type: 3}
+  - {fileID: 21300000, guid: e7506993ef79f44b083aefc7472f8460, type: 3}
+  - {fileID: 21300000, guid: d7011ec4a9fb24d3d952a19a1c8ea2bf, type: 3}
+  - {fileID: 21300000, guid: df810ef487df048bb990d2500f61613b, type: 3}
+  - {fileID: 21300000, guid: 8a472c05258164275af61b1557542f1a, type: 3}
+  - {fileID: 21300000, guid: 6c617e25b071a4c55a774c56ab32d061, type: 3}
+  - {fileID: 21300000, guid: c6c6bc55b6f4b4cbeb28e5093819ac72, type: 3}
+  - {fileID: 21300000, guid: 04cfa285a3b6341f0b80620e7a9a5f29, type: 3}
+  - {fileID: 21300000, guid: dfaeb998c7d794464a2d664939447811, type: 3}
+  - {fileID: 21300000, guid: 542c5f2951e3d438d94c8e7e7972d68a, type: 3}
+  - {fileID: 21300000, guid: 14c11bf916bdc4545b51256eb4c2dff4, type: 3}
+  - {fileID: 21300000, guid: 16799b5a6f30842c9800153680698488, type: 3}
+  - {fileID: 21300000, guid: 3d56b05b3a9da40f0b6de1d6b82ed5b6, type: 3}
+  - {fileID: 21300000, guid: 73a0fa3ca8742478686e344736d94003, type: 3}
+  - {fileID: 21300000, guid: ce0656acde2df4f99a2951c9a1faec40, type: 3}
+  - {fileID: 21300000, guid: 0735d1eccb4e0456db0fe66081d00e07, type: 3}
+  - {fileID: 21300000, guid: ab3c2d2de721740e4ae66f3957fce185, type: 3}
+  - {fileID: 21300000, guid: 8965dc4db1b304db08b66ea21b5bc900, type: 3}
+  - {fileID: 21300000, guid: 4c9a969d1105d4a9e9082a4b0552b343, type: 3}
+  - {fileID: 21300000, guid: 544a8cadb878749dea85152873fe349d, type: 3}
+  - {fileID: 21300000, guid: c3b60c8ebaebb419a93b79d3ebcb024e, type: 3}
+  - {fileID: 21300000, guid: 80702eafcc85e42479c36926acc54b11, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - shop_tab_icon_gem_f
+  - shop_tab_line
+  - shop_life_life
+  - shop_frame_default
+  - shop_frame_red
+  - shop_tab_icon_life_n
+  - shop_img_coin_02
+  - shop_life_friend
+  - shop_tab_icon_gem_n
+  - shop_img_coin_01
+  - shop_tab_bg_n
+  - shop_tab_icon_coin_n
+  - shop_img_gem_01
+  - shop_img_gem_02
+  - shop_img_coin_04
+  - shop_tab_icon_coin_f
+  - shop_tab_bg_f
+  - shop_img_coin_03
+  - shop_frame_brown
+  - shop_label_blue
+  - shop_tag_bg
+  - shop_img_gem_03
+  - shop_btn_f
+  - shop_btn_n
+  - shop_frame_purple
+  - shop_img_gem_04
+  - shop_tab_icon_life_f
+  m_Tag: Shop
+  m_IsVariant: 0

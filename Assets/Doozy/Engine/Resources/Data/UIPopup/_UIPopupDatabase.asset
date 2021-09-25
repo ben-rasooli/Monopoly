@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c04155d43740f46a3223a7eb386e0c, type: 3}
   m_Name: _UIPopupDatabase
   m_EditorClassIdentifier: 
-  PopupNames: []
-  Popups: []
+  PopupNames:
+  - Get Out Of Jail
+  - Message Popup
+  - Error Popup
+  Popups:
+  - {fileID: 11400000, guid: fdd734bdfd20047f6876d07bad2f6742, type: 2}
+  - {fileID: 11400000, guid: e720c450f677240fe941e29b879edbea, type: 2}
+  - {fileID: 11400000, guid: 860743cc682044aa7a83d2ce4366c729, type: 2}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shop_Item
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2e6033fbda2b64669ac5bbcf6e3df538, type: 3}
+    totalSpriteSurfaceArea: 317732
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f2e679d46d4c24b2caa59876ce2c3b0f, type: 3}
+  - {fileID: 21300000, guid: 3ca6f97848c97460aa69b57e1d78f14f, type: 3}
+  - {fileID: 21300000, guid: 9e7580e91077a4665b442f48fdd8ac07, type: 3}
+  - {fileID: 21300000, guid: a111fce9a257e490ebda629f85f7a9b6, type: 3}
+  - {fileID: 21300000, guid: d231d56e6196945afa9b76fe204d37d8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - itemshop_coin
+  - itemshop_btn_green_f
+  - itemshop_btn_green_n
+  - itemshop_frame_n
+  - itemshop_frame_lock
+  m_Tag: Shop_Item
+  m_IsVariant: 0

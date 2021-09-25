@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Items
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 03e2f5ea9c0cb4e8f85a0d256312b976, type: 3}
+    totalSpriteSurfaceArea: 621264
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3cf67f21054fb4cbaa864313e5d82706, type: 3}
+  - {fileID: 21300000, guid: cabe9551560514e0c8a1bdc41f0d79c1, type: 3}
+  - {fileID: 21300000, guid: 934f69e12e8ec4b63ad40fc5e336e845, type: 3}
+  - {fileID: 21300000, guid: 53507632635114336a2e40b6eaeb9f7d, type: 3}
+  - {fileID: 21300000, guid: f3ae998268ac649b699a9bc00052d4db, type: 3}
+  - {fileID: 21300000, guid: 7634b3c371d934fbe94fbab955a704aa, type: 3}
+  - {fileID: 21300000, guid: e62207548aa0444dbaa6ec1c1af587fc, type: 3}
+  - {fileID: 21300000, guid: 5ae39115da524401799f8ea760913a3e, type: 3}
+  - {fileID: 21300000, guid: 50d3e806037654a5ab03e0d113b17b40, type: 3}
+  - {fileID: 21300000, guid: 46ac5b86c8fa94cbc8aebaa690151bf9, type: 3}
+  - {fileID: 21300000, guid: 3f55e7c652e074028a060fbadee17520, type: 3}
+  - {fileID: 21300000, guid: 77e234273581640669b4b3a3dde503b3, type: 3}
+  - {fileID: 21300000, guid: 069a97c70a2cf489d8a4db008e48577f, type: 3}
+  - {fileID: 21300000, guid: 5dc3d1d7fa61c453aa061975eaa81a1b, type: 3}
+  - {fileID: 21300000, guid: b1c6a028b54994f99a35626227f3f21d, type: 3}
+  - {fileID: 21300000, guid: d33659194a9a04f8c9f229adb736c112, type: 3}
+  - {fileID: 21300000, guid: 030d8fac7b5394977a4299627e9a12ee, type: 3}
+  - {fileID: 21300000, guid: dcde14fcdf2c5424588d9b51dcb2d4ea, type: 3}
+  - {fileID: 21300000, guid: 6df8765df0b31414e935f78483de993e, type: 3}
+  - {fileID: 21300000, guid: 77b0f66da2be946d6ae6cf26327d7acc, type: 3}
+  - {fileID: 21300000, guid: 34f58c2e5ed8448febae051737f099c3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - item_ring_soul
+  - item_energy_yellow
+  - item_star
+  - item_potion_red
+  - item_stick_pain
+  - item_chest
+  - item_energy_blue
+  - item_ax
+  - item_sword_long
+  - item_wing
+  - item_hammer
+  - item_helmet
+  - item_bomb
+  - item_potion_green
+  - item_stick_mana
+  - item_shield
+  - item_ring_mana
+  - item_sword_short
+  - item_life
+  - item_bow
+  - item_coin
+  m_Tag: Items
+  m_IsVariant: 0

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lever_Up
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2a20a3a3fddcc43b09ba35e2b1b9e94e, type: 3}
+    totalSpriteSurfaceArea: 1808152
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6a8895f0394b84b2a9bb8acd828d818b, type: 3}
+  - {fileID: 21300000, guid: 6e20ba63ee0424b8fbcc592ff18b2b5d, type: 3}
+  - {fileID: 21300000, guid: 560fc775931a74d28a62848f0def23d0, type: 3}
+  - {fileID: 21300000, guid: 3b39b8a6d073e4a5a89ecc6e931b2239, type: 3}
+  - {fileID: 21300000, guid: faab93096a3934e9c9ae9bd23ba22fe0, type: 3}
+  - {fileID: 21300000, guid: 5b187fde8ff3942979e15bc06fcd1888, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - levelup_badge
+  - unlocked_text
+  - levelup_bottom_bg
+  - txt_levelup
+  - fx_rotate_line
+  - unlocked_bg
+  m_Tag: Lever_Up
+  m_IsVariant: 0
