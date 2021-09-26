@@ -12,7 +12,7 @@ namespace Project
 
     public override string ToString()
     {
-      return $"Turn:[{Index}] - {Dice} - [{PlayerName}] Location:[{PlayerLocationID}]";
+      return $"Turn: {Index} \t{PlayerName} \tLocation: {PlayerLocationID} \t{Dice} ";
     }
   }
 }

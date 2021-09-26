@@ -8,6 +8,8 @@ namespace Project
   {
     public int TurnCount { get; private set; }
 
+    public List<TurnStats> TurnStatsList => _turnStatsList;
+
     public void Move(out bool didRollDouble)
     {
       Dice dice = RollDice();
@@ -72,14 +74,6 @@ namespace Project
       TurnCount++;
       _playerDoubleDiceState = PlayerDoubleDiceState.NoDouble;
       runTurn();
-    }
-
-    public void FinishGame()
-    {
-      foreach (var item in _turnStatsList)
-      {
-        Debug.Log(item);
-      }
     }
 
     public void Restart()

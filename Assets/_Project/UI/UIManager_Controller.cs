@@ -210,7 +210,12 @@ namespace Project
 
     void onFinishGame()
     {
-      _gameManager.FinishGame();
+      var turnStatsList = _gameManager.TurnStatsList;
+      var tempList = ListPool<string>.Instance.Spawn();
+      foreach (TurnStats stats in turnStatsList)
+        tempList.Add(stats.ToString());
+      _listView_Controller.Show(tempList, $"History of turns");
+      ListPool<string>.Instance.Despawn(tempList);
     }
     #endregion
   }

@@ -44,7 +44,7 @@ namespace Project
 
   public class LandSpace : PropertySpace
   {
-    public override string Details => $"Location: {ID}\t\tName: {_details.Name}\t\t\tRent: ${_details.BaseRent}";
+    public override string Details => $"Location:  {ID}\t\tName: {_details.Name}\t\t\tRent: ${_details.BaseRent}";
 
     [Inject] LandSpaceDetails _details;
 
