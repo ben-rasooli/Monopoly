@@ -19,10 +19,10 @@ namespace Project
       Container.BindInstance<UIButton>(_payButton).WithId("pay button").AsCached();
       Container.BindInstance<UIButton>(_moveButton).WithId("move button").AsCached();
       Container.BindFactory<string, ListViewItem_Controller, ListViewItem_Controller.Factory>()
-                .FromPoolableMemoryPool<string, ListViewItem_Controller, ListViewItem_ControllerPool>(poolBinder => poolBinder
-                    .WithInitialSize(25)
-                    .FromComponentInNewPrefab(_listViewItem_Prefab)
-                    .UnderTransform(_listView_Transform));
+        .FromPoolableMemoryPool<string, ListViewItem_Controller, ListViewItem_ControllerPool>(poolBinder => poolBinder
+          .WithInitialSize(25)
+          .FromComponentInNewPrefab(_listViewItem_Prefab)
+          .UnderTransform(_listView_Transform));
     }
   }
 

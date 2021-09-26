@@ -12,6 +12,7 @@ namespace Project
     public override void InstallBindings()
     {
       Container.BindInterfacesAndSelfTo<BoardManager>().AsSingle().WithArguments(_jailLocationID);
+      Container.BindInstance(_boardSpace_Controllers).AsCached();
 
       for (int i = 0; i < _boardSpace_Controllers.Count; i++)
       {
@@ -26,10 +27,6 @@ namespace Project
 
           case BoardSpaceType.GoToJail:
             Container.Bind<BoardSpace>().To<GoToJailSpace>().AsCached().WithArguments(i, spaceController);
-            break;
-
-          case BoardSpaceType.Utility:
-            Container.Bind<BoardSpace>().To<UtilitySpace>().AsCached().WithArguments(i, spaceController);
             break;
 
           case BoardSpaceType.IncomeTax:
@@ -49,11 +46,18 @@ namespace Project
             break;
 
           case BoardSpaceType.Land:
+            spaceController.BoardSpaceDisplayDetails = spaceController.LandDetails.ToString();
             Container.Bind(typeof(BoardSpace), typeof(PropertySpace)).To<LandSpace>().AsCached().WithArguments(i, spaceController.LandDetails, spaceController);
             break;
 
           case BoardSpaceType.RailRoad:
-            Container.Bind(typeof(BoardSpace), typeof(PropertySpace)).To<RailRoadSpace>().AsCached().WithArguments(i, spaceController.RailRoadDetails, spaceController);
+            spaceController.BoardSpaceDisplayDetails = spaceController.PropertyDetails.ToString();
+            Container.Bind(typeof(BoardSpace), typeof(PropertySpace)).To<RailRoadSpace>().AsCached().WithArguments(i, spaceController.PropertyDetails, spaceController);
+            break;
+
+          case BoardSpaceType.Utility:
+            spaceController.BoardSpaceDisplayDetails = spaceController.PropertyDetails.ToString();
+            Container.Bind(typeof(BoardSpace), typeof(PropertySpace)).To<UtilitySpace>().AsCached().WithArguments(i, spaceController.PropertyDetails, spaceController);
             break;
         }
       }

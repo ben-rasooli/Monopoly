@@ -14,6 +14,7 @@ namespace Project
     {
       _player = player;
       ShowMessage(player.Name);
+      UpdateSpaceDetailsUI();
       DisableEndTurnButton();
       DisablePurchaseButton();
       DisablePayButton();
@@ -23,20 +24,21 @@ namespace Project
       UpdatePlayerWealth();
     }
 
-    public void EnablePurchaseButton(Action<Player> purchaseAction, LandSpaceDetails details)
+    public void EnablePurchaseButton(Action<Player> purchaseAction, int price)
     {
-      enablePurchaseButton(purchaseAction, details.Price, details.ToString());
-    }
-
-    public void EnablePurchaseButton(Action<Player> purchaseAction, RailRoadSpaceDetails details)
-    {
-      enablePurchaseButton(purchaseAction, details.Price, details.ToString());
+      _purchaseButton.SetLabelText($"Purchase ${price}");
+      _purchaseButton.EnableButton();
+      _purchaseButton.Button.onClick.RemoveAllListeners();
+      _purchaseButton.Button.onClick.AddListener(() =>
+      {
+        purchaseAction(_player);
+        UpdatePlayerWealth();
+      });
     }
 
     public void DisablePurchaseButton()
     {
       _purchaseButton.DisableButton();
-      _propertyDetailsUI.Hide();
     }
 
     public void EnablePayButton(Action<Player, Player> payAction, Player owner, int payAmount)
@@ -104,11 +106,29 @@ namespace Project
       _playerWealthText.SetText(_player.Wealth.ToString());
     }
 
+    public void UpdateSpaceDetailsUI()
+    {
+      string spaceDetails = _boardManager.GetSpaceDetails(_player.LocationID);
+      _spaceDetailsUI_controller.Show(spaceDetails);
+    }
+
     public void ShowGetOutOfJailPopup(Action<Player> payAction, Action<Player> rollDiceAciton)
     {
       UIPopup popup = UIPopup.GetPopup("Get Out Of Jail");
       popup.Data.SetButtonsCallbacks(() => { payAction.Invoke(_player); }, () => { rollDiceAciton.Invoke(_player); });
       popup.Show();
+    }
+
+    public void OnPlayerStartMoving()
+    {
+      _controlsUI.Hide();
+      _spaceDetailsUI_controller.Hide();
+    }
+
+    public void OnPlayerStopedMoving()
+    {
+      _controlsUI.Show();
+      UpdateSpaceDetailsUI();
     }
 
     #region dependencies
@@ -118,8 +138,9 @@ namespace Project
     [Inject(Id = "purchase button")] UIButton _purchaseButton;
     [Inject(Id = "pay button")] UIButton _payButton;
     [Inject(Id = "move button")] UIButton _moveButton;
+    [SerializeField] UIView _controlsUI;
     [SerializeField] ListView_Controller _listView_Controller;
-    [SerializeField] PropertyDetails_Controller _propertyDetailsUI;
+    [SerializeField] SpaceDetailsUI_Controller _spaceDetailsUI_controller;
     [SerializeField] UIButton _endTurnButton;
     [SerializeField] UIButton _assetsButton;
     [SerializeField] UIButton _getOutOfJailButton;
@@ -150,19 +171,6 @@ namespace Project
     #region details
     Player _player;
 
-    void enablePurchaseButton(Action<Player> purchaseAction, int price, string propertyDetails)
-    {
-      _purchaseButton.SetLabelText($"Purchase ${price}");
-      _purchaseButton.EnableButton();
-      _purchaseButton.Button.onClick.RemoveAllListeners();
-      _purchaseButton.Button.onClick.AddListener(() =>
-      {
-        purchaseAction(_player);
-        UpdatePlayerWealth();
-      });
-      _propertyDetailsUI.Show(propertyDetails);
-    }
-
     void enablePayButton(UnityAction payAction, int payAmount)
     {
       DisableEndTurnButton();
@@ -181,10 +189,13 @@ namespace Project
     void onShowAssets()
     {
       var assets = _boardManager.GetPlayerAssets(_player);
-      List<string> data = new List<string> { "one", "two", "three", "four" };
-      _listView_Controller.Show(data, $"{_player.Name} Asset List");
-      // configure the Player assets menu
-      // show the menu
+      var tempList = ListPool<string>.Instance.Spawn();
+      foreach (var asset in assets)
+        tempList.Add(asset.Details);
+      if (tempList.Count < 1)
+        tempList.Add("Has no asset yet. Buy some properties.");
+      _listView_Controller.Show(tempList, $"{_player.Name} Asset List");
+      ListPool<string>.Instance.Despawn(tempList);
     }
 
     void onMove()

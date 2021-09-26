@@ -226,7 +226,7 @@ MonoBehaviour:
   StartAlpha: 1
   AddToPopupQueue: 0
   AutoHideAfterShow: 1
-  AutoHideAfterShowDelay: 2
+  AutoHideAfterShowDelay: 1.3
   AutoSelectButtonAfterShow: 0
   AutoSelectPreviouslySelectedButtonAfterHide: 1
   BlockBackButton: 1

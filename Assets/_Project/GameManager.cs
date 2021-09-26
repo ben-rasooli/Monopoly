@@ -11,10 +11,10 @@ namespace Project
     public void Move(out bool didRollDouble)
     {
       Dice dice = RollDice();
-      didRollDouble = dice.Die_1 == dice.Die_2;
+      didRollDouble = dice.IsDouble;
 
       bool shouldGoToJail = false;
-      if (didRollDouble)
+      if (dice.IsDouble)
       {
         switch (_playerDoubleDiceState)
         {
@@ -52,8 +52,8 @@ namespace Project
     {
       var result = new Dice
       {
-        Die_1 = Random.Range(1, 5),
-        Die_2 = Random.Range(1, 5)
+        Die_1 = Random.Range(1, 7),
+        Die_2 = Random.Range(1, 7)
       };
 
       _UIManager.ShowMessage(result.ToString());
@@ -91,6 +91,7 @@ namespace Project
     [Inject] List<Player> _players;
     [Inject] BoardManager _boardManager;
     [Inject] UIManager_Controller _UIManager;
+    [Inject] Camera_Controller _camera_Controller;
     [Inject] Jail _jail;
     #endregion
 
@@ -119,6 +120,7 @@ namespace Project
       _currentPlayer = _playerQueue.Dequeue();
       _playerQueue.Enqueue(_currentPlayer);
       _UIManager.Configure(_currentPlayer);
+      _camera_Controller.ChangeCamera(_currentPlayer.Name);
       if (_currentPlayer.IsInJail)
         _jail.ShowGetOutOfJail(_currentPlayer);
       else

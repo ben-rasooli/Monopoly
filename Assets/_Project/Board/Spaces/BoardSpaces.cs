@@ -5,11 +5,14 @@ namespace Project
 {
   public class BoardSpace
   {
-    [Inject] public int ID { get; private set; }
-    [Inject] protected UIManager_Controller _UIManager;
-    [Inject] BoardSpace_Controller _controller;
-    public Vector3 Position => _controller.Position;
+    public Vector3 Position => BoardSpace_Controller.Position;
+    public BoardSpaceType SpaceType => BoardSpace_Controller.SpaceType;
+    public string DisplayDetails => BoardSpace_Controller.BoardSpaceDisplayDetails;
     public virtual void Process(Player player) { }
+    [Inject] public int ID { get; private set; }
+    [Inject] public BoardSpace_Controller BoardSpace_Controller;
+    [Inject] protected UIManager_Controller _UIManager;
+    [Inject] protected GameManager _gameManager;
   }
 
   public class GoToJailSpace : BoardSpace
@@ -19,14 +22,6 @@ namespace Project
     public override void Process(Player player)
     {
       _jail.SendToJail(player);
-    }
-  }
-
-  public class UtilitySpace : BoardSpace
-  {
-    public override void Process(Player player)
-    {
-      Debug.Log("pay utility bill");
     }
   }
 

@@ -9,6 +9,7 @@ namespace Project
   {
     [SerializeField] List<BoardSpace_Controller> _boardSpace_Controllers;
     [SerializeField] List<Player_Controller> _player_Controller;
+    [SerializeField] Camera_Controller _camera_Controller;
     [SerializeField] int _jailLocationID;
 
     public override void InstallBindings()
@@ -16,9 +17,10 @@ namespace Project
       Container.Bind<Jail>().AsSingle();
       Container.BindInstance(_boardSpace_Controllers).AsCached().WhenInjectedInto<BoardManager_Installer>();
       Container.BindInstance(_jailLocationID).AsCached().WhenInjectedInto<BoardManager_Installer>();
-      Container.Bind<BoardManager>().FromSubContainerResolve().ByInstaller<BoardManager_Installer>().AsSingle();
+      Container.BindInterfacesAndSelfTo<BoardManager>().FromSubContainerResolve().ByInstaller<BoardManager_Installer>().AsSingle();
       Container.Bind<UIManager_Controller>().FromComponentsInHierarchy().AsSingle();
       bindPlayers();
+      Container.BindInstance(_camera_Controller).AsSingle();
       Container.BindInterfacesAndSelfTo<GameManager>().AsSingle();
     }
 
