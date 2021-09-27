@@ -32,6 +32,11 @@ namespace Project
       _controller.Move(position, _UIManager_Controller.OnPlayerStartMoving, _UIManager_Controller.OnPlayerStopedMoving);
     }
 
+    public void MoveSilently(Vector3 position)
+    {
+      _controller.Move(position);
+    }
+
     #region dependencies
     [Inject] Player_Controller _controller;
     [Inject] UIManager_Controller _UIManager_Controller;

@@ -8,7 +8,7 @@ namespace Project
     {
       player.LocationID = _boardManager.GetJailSpace.ID;
       player.IsInJail = true;
-      player.Move(_boardManager.GetJailSpace.Position);
+      player.MoveSilently(_boardManager.GetJailSpace.Position);
       _gameManager.EndTurn();
     }
 

@@ -7,11 +7,13 @@ namespace Project
   public class BoardManager_Installer : Installer<BoardManager_Installer>
   {
     [Inject] List<BoardSpace_Controller> _boardSpace_Controllers;
-    [Inject] int _jailLocationID;
 
     public override void InstallBindings()
     {
-      Container.BindInterfacesAndSelfTo<BoardManager>().AsSingle().WithArguments(_jailLocationID);
+      int jailLocationID = _boardSpace_Controllers.FindIndex(ctr => ctr.SpaceType == BoardSpaceType.Jail);
+      int goToJailLocationID = _boardSpace_Controllers.FindIndex(ctr => ctr.SpaceType == BoardSpaceType.GoToJail);
+
+      Container.BindInterfacesAndSelfTo<BoardManager>().AsSingle().WithArguments(jailLocationID, goToJailLocationID);
       Container.BindInstance(_boardSpace_Controllers).AsCached();
 
       for (int i = 0; i < _boardSpace_Controllers.Count; i++)

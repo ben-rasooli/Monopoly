@@ -10,11 +10,9 @@ namespace Project
 
     public List<TurnStats> TurnStatsList => _turnStatsList;
 
-    public void Move(out bool didRollDouble)
+    public void Move()
     {
       Dice dice = RollDice();
-      didRollDouble = dice.IsDouble;
-
       bool shouldGoToJail = false;
       if (dice.IsDouble)
       {
@@ -43,12 +41,13 @@ namespace Project
         _boardManager.Move(_currentPlayer, dice);
     }
 
-    public void RewardPlayer(int amount)
+    public void RewardPlayer()
     {
-      _currentPlayer.Wealth += amount;
+      _currentPlayer.Wealth += _completeLapRewardAmount;
       _UIManager.UpdatePlayerWealth();
-      _UIManager.ShowMessage($"Received ${amount}");
+      _UIManager.ShowMessage($"Received ${_completeLapRewardAmount}");
     }
+    int _completeLapRewardAmount = 200;
 
     public Dice RollDice()
     {

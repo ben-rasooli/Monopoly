@@ -1,3 +1,5 @@
+using System;
+using System.Text;
 using UnityEngine;
 
 namespace Project
@@ -12,8 +14,13 @@ namespace Project
 
     public override string ToString()
     {
-      return
-        $"{Name}\nPrice\t\t\t${Price}\nRent\n{Rent}\nMortgage Value\t${MortgageValue}";
+      _stringBuilder.Clear();
+      _stringBuilder.Append($"{Name}\nPrice\t\t\t${Price}\nRent");
+      if (Rent.Length > 10) _stringBuilder.Append(newLine);
+      _stringBuilder.Append($"{Rent}\nMortgage Value\t${MortgageValue}");
+      return _stringBuilder.ToString();
     }
+    StringBuilder _stringBuilder = new StringBuilder();
+    const string newLine = "\n";
   }
 }

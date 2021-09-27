@@ -3,7 +3,6 @@ using Doozy.Engine.UI;
 using UnityEngine;
 using Zenject;
 using TMPro;
-using System.Collections.Generic;
 using UnityEngine.Events;
 
 namespace Project
@@ -198,15 +197,9 @@ namespace Project
       ListPool<string>.Instance.Despawn(tempList);
     }
 
-    void onMove()
-    {
-      _gameManager.Move(out bool didRollDouble);
-    }
+    void onMove() => _gameManager.Move();
 
-    void onGetOutOfJail()
-    {
-      _jail.ShowGetOutOfJail(_player);
-    }
+    void onGetOutOfJail() => _jail.ShowGetOutOfJail(_player);
 
     void onFinishGame()
     {

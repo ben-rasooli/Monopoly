@@ -9,16 +9,16 @@ namespace Project
   {
     public string Name;
 
-    public void Move(Vector3 position, Action onStartMoving, Action onStopMoving)
+    public void Move(Vector3 position, Action onStartMoving = null, Action onStopMoving = null)
     {
+      onStartMoving?.Invoke();
       _myAnimator.SetBool("Moving", true);
       _myNavAgent.isStopped = false;
       _myNavAgent.SetDestination(position);
-      onStartMoving.Invoke();
-      StartCoroutine(nameof(watchForDestinationReach), onStopMoving);
+      StartCoroutine(watchForDestinationReach(onStopMoving));
     }
 
-    IEnumerator watchForDestinationReach(Action onReachDestination)
+    IEnumerator watchForDestinationReach(Action onReachDestination = null)
     {
       while (true)
       {
@@ -27,7 +27,7 @@ namespace Project
         {
           _myNavAgent.isStopped = true;
           _myAnimator.SetBool("Moving", false);
-          onReachDestination.Invoke();
+          onReachDestination?.Invoke();
           break;
         }
       }

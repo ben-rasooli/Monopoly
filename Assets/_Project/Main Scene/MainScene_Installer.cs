@@ -14,10 +14,10 @@ namespace Project
 
     public override void InstallBindings()
     {
-      Container.Bind<Jail>().AsSingle();
       Container.BindInstance(_boardSpace_Controllers).AsCached().WhenInjectedInto<BoardManager_Installer>();
       Container.BindInstance(_jailLocationID).AsCached().WhenInjectedInto<BoardManager_Installer>();
       Container.BindInterfacesAndSelfTo<BoardManager>().FromSubContainerResolve().ByInstaller<BoardManager_Installer>().AsSingle();
+      Container.Bind<Jail>().AsSingle();
       Container.Bind<UIManager_Controller>().FromComponentsInHierarchy().AsSingle();
       bindPlayers();
       Container.BindInstance(_camera_Controller).AsSingle();

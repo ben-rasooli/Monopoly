@@ -13,11 +13,16 @@ namespace Project
       int nextLocationID = (currentLocationID + numberOfSpaceToMove) % _boardSpaces.Count; // wrap around when reach end of the list
 
       if (nextLocationID < currentLocationID)
-        _gameManager.RewardPlayer(_completeLapRewardAmount);
+        _gameManager.RewardPlayer();
 
-      player.LocationID = nextLocationID;
-      player.Move(_boardSpaces[nextLocationID].Position);
-      _boardSpaces[nextLocationID].Process(player);
+      if (nextLocationID == _goToJailLocationID)
+        _jail.SendToJail(player);
+      else
+      {
+        player.LocationID = nextLocationID;
+        player.Move(_boardSpaces[nextLocationID].Position);
+        _boardSpaces[nextLocationID].Process(player);
+      }
     }
 
     public string GetSpaceDetails(int locationID)
@@ -37,7 +42,9 @@ namespace Project
     [Inject] List<BoardSpace> _boardSpaces;
     [Inject] List<PropertySpace> _propertySpaces;
     [Inject] List<BoardSpace_Controller> _boardSpace_Controllers;
+    [Inject] Jail _jail;
     [Inject] int _jailLocationID;
+    [Inject] int _goToJailLocationID;
     #endregion
 
     public void Initialize()
@@ -56,10 +63,6 @@ namespace Project
         property.SetConnectedProperties(spaces);
       }
     }
-
-    #region details
-    int _completeLapRewardAmount = 200;
-    #endregion
   }
 
 }
